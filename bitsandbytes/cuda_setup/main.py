@@ -98,6 +98,7 @@ class CUDASetup:
         package_dir = Path(__file__).parent.parent
         binary_path = package_dir / binary_name
 
+        print('binary_path: ' + str(binary_path))
         try:
             if not binary_path.exists():
                 self.add_log_entry(f"CUDA SETUP: Required library version not found: {binary_name}. Maybe you need to compile it from source?")
@@ -122,7 +123,7 @@ class CUDASetup:
                 self.lib = ct.cdll.LoadLibrary(binary_path)
             else:
                 self.add_log_entry(f"CUDA SETUP: Loading binary {binary_path}...")
-                self.lib = ct.cdll.LoadLibrary(binary_path)
+                self.lib = ct.cdll.LoadLibrary(str(binary_path))
         except Exception as ex:
             self.add_log_entry(str(ex))
             self.print_log_stack()
