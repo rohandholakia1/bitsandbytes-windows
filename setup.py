@@ -24,7 +24,7 @@ setup(
     description="8-bit optimizers and matrix multiplication routines.",
     license="MIT",
     keywords="gpu optimizers optimization 8-bit quantization compression",
-    url="https://github.com/TimDettmers/bitsandbytes",
+    url="https://github.com/Keith-Hon/bitsandbytes-windows",
     packages=find_packages(),
     package_data={"": libs},
     long_description=read("README.md"),
