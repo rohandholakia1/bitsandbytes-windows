@@ -7,8 +7,13 @@ import os
 
 from setuptools import find_packages, setup
 
+windows_libs = list(glob.glob("./bitsandbytes/cuda_setup/libbitsandbytes*.dll"))
 libs = list(glob.glob("./bitsandbytes/libbitsandbytes*.so"))
 libs = [os.path.basename(p) for p in libs]
+
+for w in windows_libs:
+    libs.append(os.path.basename(w))
+
 print("libs:", libs)
 
 
@@ -18,7 +23,7 @@ def read(fname):
 
 setup(
     name=f"bitsandbytes-windows",
-    version=f"0.37.2",
+    version=f"0.37.5",
     author="Tim Dettmers",
     author_email="dettmers@cs.washington.edu",
     description="8-bit optimizers and matrix multiplication routines.",
