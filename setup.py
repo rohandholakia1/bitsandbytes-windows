@@ -22,7 +22,7 @@ def read(fname):
 
 
 setup(
-    name=f"bitsandbytes-windows",
+    name=f"bitsandbytes",
     version=f"0.37.5",
     author="Tim Dettmers",
     author_email="dettmers@cs.washington.edu",
